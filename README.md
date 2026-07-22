@@ -1,6 +1,6 @@
 # Projeto PEN
 
-Visual em Streamlit inspirado no protótipo enviado, sem API e sem FastAPI.
+Visual em Streamlit.
 
 ## Como executar
 
