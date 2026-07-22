@@ -77,6 +77,9 @@ def app_html() -> str: #def app_html (function) that returns a string
     }}
 
     .pen-header {{
+        position: fixed;
+        inset: 0 0 auto 0;
+        z-index: 20;
         height: 102px;
         display: grid;
         grid-template-columns: minmax(300px, 1fr) auto minmax(380px, 1fr);
@@ -149,6 +152,7 @@ def app_html() -> str: #def app_html (function) that returns a string
 
     .page {{
         height: calc(100vh - 102px);
+        margin-top: 102px;
         display: grid;
         grid-template-columns: 220px minmax(760px, 1fr) 210px;
         gap: 28px;
@@ -459,6 +463,7 @@ def app_html() -> str: #def app_html (function) that returns a string
 
     .secondary {{
         height: calc(100vh - 102px);
+        margin-top: 102px;
         display: grid;
         place-items: center;
         padding: 38px;
@@ -532,9 +537,15 @@ def app_html() -> str: #def app_html (function) that returns a string
 
         .page {{
             height: auto;
+            margin-top: 174px;
             grid-template-columns: 1fr;
             align-items: start;
             padding: 24px 18px;
+        }}
+
+        .secondary {{
+            height: auto;
+            margin-top: 174px;
         }}
 
         .callout {{
@@ -908,9 +919,15 @@ def app_html() -> str: #def app_html (function) that returns a string
 st.markdown(
     """
     <style>
-        html, body, [data-testid="stAppViewContainer"], .main {
+        html,
+        body,
+        .stApp,
+        [data-testid="stAppViewContainer"],
+        [data-testid="stAppViewContainer"] > .main {
+            margin: 0;
+            padding: 0;
             overflow: hidden;
-            background: #f5f7f1;
+            background: #263d11;
         }
 
         [data-testid="stHeader"],
@@ -927,8 +944,19 @@ st.markdown(
             padding: 0;
         }
 
+        [data-testid="stVerticalBlock"],
+        [data-testid="stElementContainer"],
+        [data-testid="stIFrame"] {
+            gap: 0;
+            margin: 0;
+            padding: 0;
+        }
+
         iframe {
             display: block;
+            border: 0;
+            margin: 0;
+            padding: 0;
         }
     </style>
     """,
