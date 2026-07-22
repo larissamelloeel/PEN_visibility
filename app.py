@@ -59,7 +59,8 @@ def app_html() -> str: #def app_html (function) that returns a string
         width: 100%;
         height: 100%;
         margin: 0;
-        overflow: hidden;
+        overflow-x: hidden;
+        overflow-y: auto;
         font-family: Arial, Helvetica, sans-serif;
         color: #2d3327;
         background:
@@ -69,8 +70,8 @@ def app_html() -> str: #def app_html (function) that returns a string
 
     .pen-app {{
         width: 100vw;
-        height: 100vh;
-        overflow: hidden;
+        min-height: 100vh;
+        overflow-x: hidden;
         background:
             radial-gradient(circle at 5% 89%, rgba(49, 77, 22, 0.12) 0 1px, transparent 1px) 0 0 / 9px 9px,
             linear-gradient(116deg, #f4f7f0 0%, #fbfcf9 48%, #edf3e7 100%);
@@ -82,7 +83,7 @@ def app_html() -> str: #def app_html (function) that returns a string
         z-index: 20;
         height: 102px;
         display: grid;
-        grid-template-columns: minmax(300px, 1fr) auto minmax(380px, 1fr);
+        grid-template-columns: minmax(300px, 1fr) minmax(380px, 1fr);
         align-items: center;
         gap: 28px;
         padding: 0 38px;
@@ -118,12 +119,6 @@ def app_html() -> str: #def app_html (function) that returns a string
         color: rgba(255, 255, 255, 0.86);
     }}
 
-    .menu-title {{
-        justify-self: center;
-        font-size: 16px;
-        font-weight: 800;
-    }}
-
     .nav {{
         justify-self: end;
         display: flex;
@@ -151,7 +146,7 @@ def app_html() -> str: #def app_html (function) that returns a string
     }}
 
     .page {{
-        height: calc(100vh - 102px);
+        min-height: calc(100vh - 102px);
         margin-top: 102px;
         display: grid;
         grid-template-columns: 220px minmax(760px, 1fr) 210px;
@@ -462,7 +457,7 @@ def app_html() -> str: #def app_html (function) that returns a string
     }}
 
     .secondary {{
-        height: calc(100vh - 102px);
+        min-height: calc(100vh - 102px);
         margin-top: 102px;
         display: grid;
         place-items: center;
@@ -509,7 +504,8 @@ def app_html() -> str: #def app_html (function) that returns a string
         .pen-app {{
             height: auto;
             min-height: 100vh;
-            overflow: auto;
+            overflow-x: hidden;
+            overflow-y: auto;
         }}
 
         .pen-header {{
@@ -520,7 +516,6 @@ def app_html() -> str: #def app_html (function) that returns a string
             padding: 18px;
         }}
 
-        .menu-title,
         .nav {{
             justify-self: start;
         }}
@@ -581,7 +576,6 @@ def app_html() -> str: #def app_html (function) that returns a string
             <div class="brand-line"></div>
             <div class="brand-name">Operador Nacional<br>do Sistema Elétrico</div>
         </div>
-        <div class="menu-title">MENU FIXO</div>
         <nav class="nav" aria-label="Navegação principal">
             <button type="button" class="active" data-page="page-1">Pag 1</button>
             <button type="button" data-page="page-2">Pag 2</button>
@@ -954,6 +948,8 @@ st.markdown(
 
         iframe {
             display: block;
+            height: 100vh !important;
+            min-height: 100vh;
             border: 0;
             margin: 0;
             padding: 0;
