@@ -83,7 +83,7 @@ def app_html() -> str: #def app_html (function) that returns a string
         z-index: 20;
         height: 102px;
         display: grid;
-        grid-template-columns: minmax(300px, 1fr) minmax(380px, 1fr);
+        grid-template-columns: 1fr;
         align-items: center;
         gap: 28px;
         padding: 0 38px;
@@ -119,71 +119,17 @@ def app_html() -> str: #def app_html (function) that returns a string
         color: rgba(255, 255, 255, 0.86);
     }}
 
-    .nav {{
-        justify-self: end;
-        display: flex;
-        gap: 24px;
-    }}
-
-    .nav button {{
-        min-width: 110px;
-        height: 48px;
-        border: 1px solid rgba(255, 255, 255, 0.16);
-        border-radius: 8px;
-        color: rgba(255, 255, 255, 0.86);
-        background: rgba(255, 255, 255, 0.16);
-        font: inherit;
-        font-weight: 800;
-        cursor: pointer;
-        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
-    }}
-
-    .nav button.active {{
-        color: #fff;
-        border-color: rgba(255, 255, 255, 0.44);
-        background: rgba(255, 255, 255, 0.25);
-        box-shadow: 0 0 18px rgba(233, 244, 211, 0.38), inset 0 0 0 1px rgba(255, 255, 255, 0.22);
-    }}
-
     .page {{
         min-height: calc(100vh - 102px);
         margin-top: 102px;
         display: grid;
-        grid-template-columns: 220px minmax(760px, 1fr) 210px;
-        gap: 28px;
-        align-items: center;
+        grid-template-columns: minmax(760px, 1fr);
+        place-items: center;
         padding: 22px 38px 28px;
     }}
 
-    .callout {{
-        display: flex;
-        align-items: flex-start;
-        gap: 12px;
-        margin-top: 150px;
-        color: #2d3327;
-        font-size: 14px;
-        line-height: 1.55;
-    }}
-
-    .callout-icon {{
-        width: 24px;
-        height: 24px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        flex: 0 0 auto;
-        border: 1px solid rgba(38, 61, 17, 0.55);
-        border-radius: 50%;
-        font-weight: 800;
-    }}
-
-    .callout strong {{
-        display: block;
-        margin-bottom: 8px;
-        font-size: 18px;
-    }}
-
     .center-stage {{
+        width: min(920px, 100%);
         min-width: 0;
         align-self: center;
     }}
@@ -365,139 +311,6 @@ def app_html() -> str: #def app_html (function) that returns a string
         font-weight: 800;
     }}
 
-    .side {{
-        display: grid;
-        gap: 170px;
-        justify-items: center;
-    }}
-
-    .no-scroll {{
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        width: 158px;
-        padding: 13px 14px;
-        border: 1px solid rgba(49, 77, 22, 0.08);
-        border-radius: 8px;
-        background: rgba(255, 255, 255, 0.84);
-        box-shadow: 0 5px 16px rgba(57, 72, 38, 0.14);
-        color: #2f3e24;
-        font-size: 13px;
-        font-weight: 800;
-    }}
-
-    .ban {{
-        position: relative;
-        width: 28px;
-        height: 28px;
-        flex: 0 0 auto;
-        border: 2px solid #3a4930;
-        border-radius: 50%;
-    }}
-
-    .ban::after {{
-        content: "";
-        position: absolute;
-        top: 12px;
-        left: 3px;
-        width: 20px;
-        height: 2px;
-        background: #3a4930;
-        transform: rotate(45deg);
-    }}
-
-    .scale {{
-        display: grid;
-        grid-template-columns: auto 1fr;
-        gap: 10px;
-        align-items: center;
-        padding: 10px 13px;
-        border-radius: 8px;
-        background: #314d16;
-        color: #fff;
-        font-size: 15px;
-        font-weight: 800;
-        box-shadow: 0 6px 18px rgba(38, 61, 17, 0.24);
-    }}
-
-    .monitor {{
-        position: relative;
-        width: 28px;
-        height: 20px;
-        border: 3px solid currentColor;
-        border-radius: 3px;
-    }}
-
-    .monitor::after {{
-        content: "";
-        position: absolute;
-        left: 9px;
-        bottom: -10px;
-        width: 7px;
-        height: 8px;
-        background: currentColor;
-    }}
-
-    .monitor::before {{
-        content: "";
-        position: absolute;
-        left: 4px;
-        bottom: -13px;
-        width: 18px;
-        height: 3px;
-        border-radius: 4px;
-        background: currentColor;
-    }}
-
-    .scale small {{
-        display: block;
-        font-size: 11px;
-        line-height: 1;
-        opacity: 0.9;
-    }}
-
-    .secondary {{
-        min-height: calc(100vh - 102px);
-        margin-top: 102px;
-        display: grid;
-        place-items: center;
-        padding: 38px;
-    }}
-
-    .work {{
-        width: min(930px, 86vw);
-    }}
-
-    .work .map-title {{
-        margin-bottom: 22px;
-    }}
-
-    .work-grid {{
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 18px;
-    }}
-
-    .work-card {{
-        min-height: 190px;
-        padding: 22px;
-        border: 1px solid rgba(49, 77, 22, 0.10);
-        border-radius: 8px;
-        background: rgba(255, 255, 255, 0.86);
-        box-shadow: 0 8px 24px rgba(57, 72, 38, 0.12);
-    }}
-
-    .work-card h3 {{
-        margin: 0 0 12px;
-        font-size: 18px;
-    }}
-
-    .work-card p {{
-        margin: 0;
-        color: #68705f;
-        line-height: 1.45;
-    }}
-
     @media (max-width: 1120px) {{
         html,
         body,
@@ -516,35 +329,12 @@ def app_html() -> str: #def app_html (function) that returns a string
             padding: 18px;
         }}
 
-        .nav {{
-            justify-self: start;
-        }}
-
-        .nav {{
-            flex-wrap: wrap;
-            gap: 10px;
-        }}
-
-        .nav button {{
-            min-width: 92px;
-            height: 42px;
-        }}
-
         .page {{
             height: auto;
-            margin-top: 174px;
+            margin-top: 120px;
             grid-template-columns: 1fr;
             align-items: start;
             padding: 24px 18px;
-        }}
-
-        .secondary {{
-            height: auto;
-            margin-top: 174px;
-        }}
-
-        .callout {{
-            margin-top: 0;
         }}
 
         .filters,
@@ -554,17 +344,6 @@ def app_html() -> str: #def app_html (function) that returns a string
 
         .chart-card {{
             height: auto;
-        }}
-
-        .side {{
-            display: flex;
-            justify-content: center;
-            gap: 16px;
-            flex-wrap: wrap;
-        }}
-
-        .work-grid {{
-            grid-template-columns: 1fr;
         }}
     }}
 </style>
@@ -576,23 +355,9 @@ def app_html() -> str: #def app_html (function) that returns a string
             <div class="brand-line"></div>
             <div class="brand-name">Operador Nacional<br>do Sistema Elétrico</div>
         </div>
-        <nav class="nav" aria-label="Navegação principal">
-            <button type="button" class="active" data-page="page-1">Pag 1</button>
-            <button type="button" data-page="page-2">Pag 2</button>
-            <button type="button" data-page="page-3">Pag 3</button>
-        </nav>
     </header>
 
-    <main class="page" data-panel="page-1">
-        <aside class="callout">
-            <span class="callout-icon">i</span>
-            <div>
-                <strong>Gráfico:</strong>
-                com zoom;<br>
-                ao passar o mouse, detalhe temporal de onde o mouse está;
-            </div>
-        </aside>
-
+    <main class="page">
         <section class="center-stage">
             <div class="map-title">título do mapa</div>
             <div class="filters">
@@ -630,39 +395,6 @@ def app_html() -> str: #def app_html (function) that returns a string
                 <svg id="chart" viewBox="0 0 860 380" role="img" aria-label="Gráfico empilhado mensal de geração programada e adicional"></svg>
                 <div class="year">2029</div>
                 <div class="tooltip" id="tooltip" aria-hidden="true"></div>
-            </div>
-        </section>
-
-        <aside class="side">
-            <div class="no-scroll">
-                <span class="ban"></span>
-                <span>SEM BARRA<br>DE ROLAGEM</span>
-            </div>
-            <div class="scale" aria-label="Escala recomendada da tela">
-                <span class="monitor"></span>
-                <span>1920 × 1080<small>(Recomendável)</small></span>
-            </div>
-        </aside>
-    </main>
-
-    <main class="secondary" data-panel="page-2" hidden>
-        <section class="work">
-            <div class="map-title">visão operacional</div>
-            <div class="work-grid">
-                <article class="work-card"><h3>Carga</h3><p>Espaço reservado para indicadores de carga, intercâmbio e sensibilidade.</p></article>
-                <article class="work-card"><h3>Recursos</h3><p>Área preparada para totais por fonte e comparação mensal.</p></article>
-                <article class="work-card"><h3>Risco</h3><p>Bloco de acompanhamento para alertas e limites operativos.</p></article>
-            </div>
-        </section>
-    </main>
-
-    <main class="secondary" data-panel="page-3" hidden>
-        <section class="work">
-            <div class="map-title">configurações</div>
-            <div class="work-grid">
-                <article class="work-card"><h3>Filtros</h3><p>Estrutura pronta para ampliar submercados, fontes e cenários.</p></article>
-                <article class="work-card"><h3>Tema</h3><p>Identidade visual centralizada no CSS do próprio Streamlit.</p></article>
-                <article class="work-card"><h3>Exportação</h3><p>Ponto futuro para salvar imagens ou dados sem criar API.</p></article>
             </div>
         </section>
     </main>
@@ -891,17 +623,6 @@ def app_html() -> str: #def app_html (function) that returns a string
         zoomStart = 0;
         zoomEnd = months.length - 1;
         renderChart();
-    }});
-
-    document.querySelectorAll(".nav button").forEach((button) => {{
-        button.addEventListener("click", () => {{
-            document.querySelectorAll(".nav button").forEach((item) => item.classList.remove("active"));
-            button.classList.add("active");
-            document.querySelectorAll("[data-panel]").forEach((panel) => {{
-                panel.hidden = panel.dataset.panel !== button.dataset.page;
-            }});
-            hideTooltip();
-        }});
     }});
 
     renderChart();
