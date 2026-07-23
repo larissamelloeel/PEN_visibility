@@ -659,11 +659,21 @@ st.markdown(
             padding: 0;
         }
 
-        [data-testid="stVerticalBlock"],
-        [data-testid="stElementContainer"],
-        [data-testid="stIFrame"] {
+        [data-testid="stVerticalBlock"] {
             gap: 0;
+        }
+
+        [data-testid="stElementContainer"] {
             margin: 0;
+            padding: 0;
+        }
+
+        [data-testid="stIFrame"] {
+            height: 100vh !important;
+            margin: 0;
+            max-height: 100vh !important;
+            min-height: 100vh !important;
+            overflow: hidden;
             padding: 0;
         }
 
